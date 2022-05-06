@@ -14,6 +14,8 @@ export default function App() {
     fetchArticleData
   ] = useFetchData();
 
+  console.log("Mofified");
+
   // useEffect(() => console.log(query), [query], {
   //   debugLabel: "[query]"
   // });
@@ -28,7 +30,7 @@ export default function App() {
   return (
     <>
       <form
-        onSubmit={event => {
+        onSubmit={(event) => {
           event.preventDefault();
           fetchArticleData(
             `https://hn.algolia.com/api/v1/search?query=${query}`
@@ -38,7 +40,7 @@ export default function App() {
         <input
           type="text"
           value={query}
-          onChange={event => setQuery(event.target.value)}
+          onChange={(event) => setQuery(event.target.value)}
         />
         <button type="submit">Fetch</button>
         <button
@@ -63,7 +65,7 @@ export default function App() {
         <p>No results.</p>
       ) : (
         <ul>
-          {articleData?.hits?.map(item => (
+          {articleData?.hits?.map((item) => (
             <li key={item.objectID}>
               <a href={item.url}>{item.title}</a>
             </li>
