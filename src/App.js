@@ -14,6 +14,8 @@ export default function App() {
     fetchArticleData
   ] = useFetchData();
 
+  console.log('aaa');
+  
   // useEffect(() => console.log(query), [query], {
   //   debugLabel: "[query]"
   // });
